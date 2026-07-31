@@ -1,11 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
-  <rect width="512" height="512" fill="#8B4513"/>
-  <rect x="96" y="236" width="320" height="48" rx="6" fill="#F5EFE6"/>
-  <rect x="120" y="200" width="32" height="120" rx="3" fill="#D4A574"/>
-  <rect x="200" y="200" width="32" height="120" rx="3" fill="#D4A574"/>
-  <rect x="280" y="200" width="32" height="120" rx="3" fill="#D4A574"/>
-  <rect x="360" y="200" width="32" height="120" rx="3" fill="#D4A574"/>
-  <circle cx="160" cy="340" r="28" fill="#2C2416"/>
-  <circle cx="352" cy="340" r="28" fill="#2C2416"/>
-  <path d="M130 180h130l50 50H130V180z" fill="#C62828"/>
+  <!-- Maskable: full-bleed; keep content in safe zone (~20% inset) -->
+  <rect width="512" height="512" fill="#3A3A3A"/>
+  <!-- Die -->
+  <rect x="112" y="144" width="200" height="200" rx="32" fill="#F5EFE6"/>
+  <circle cx="162" cy="194" r="18" fill="#2C2416"/>
+  <circle cx="212" cy="244" r="18" fill="#2C2416"/>
+  <circle cx="262" cy="294" r="18" fill="#2C2416"/>
+  <circle cx="262" cy="194" r="18" fill="#2C2416"/>
+  <circle cx="162" cy="294" r="18" fill="#2C2416"/>
+  <!-- Score tokens -->
+  <circle cx="372" cy="196" r="50" fill="#C62828"/>
+  <circle cx="372" cy="264" r="50" fill="#2E7D32"/>
+  <circle cx="372" cy="332" r="50" fill="#1565C0"/>
+  <circle cx="372" cy="196" r="22" fill="#F5EFE6" opacity="0.35"/>
+  <circle cx="372" cy="264" r="22" fill="#F5EFE6" opacity="0.35"/>
+  <circle cx="372" cy="332" r="22" fill="#F5EFE6" opacity="0.35"/>
 </svg>

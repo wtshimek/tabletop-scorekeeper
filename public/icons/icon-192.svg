@@ -1,12 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" fill="none">
-  <rect width="192" height="192" rx="36" fill="#8B4513"/>
-  <rect x="24" y="84" width="144" height="24" rx="4" fill="#F5EFE6"/>
-  <rect x="36" y="66" width="16" height="60" rx="2" fill="#D4A574"/>
-  <rect x="72" y="66" width="16" height="60" rx="2" fill="#D4A574"/>
-  <rect x="108" y="66" width="16" height="60" rx="2" fill="#D4A574"/>
-  <rect x="144" y="66" width="16" height="60" rx="2" fill="#D4A574"/>
-  <circle cx="54" cy="132" r="14" fill="#2C2416"/>
-  <circle cx="138" cy="132" r="14" fill="#2C2416"/>
-  <path d="M42 60h60l24 24H42V60z" fill="#C62828"/>
-  <text x="96" y="52" text-anchor="middle" fill="#F5EFE6" font-family="system-ui,sans-serif" font-size="22" font-weight="700">TTR</text>
+  <!-- Generic scorekeeper: die + tally tokens -->
+  <rect width="192" height="192" rx="36" fill="#3A3A3A"/>
+  <!-- Die -->
+  <rect x="36" y="48" width="88" height="88" rx="14" fill="#F5EFE6"/>
+  <circle cx="58" cy="70" r="8" fill="#2C2416"/>
+  <circle cx="80" cy="92" r="8" fill="#2C2416"/>
+  <circle cx="102" cy="114" r="8" fill="#2C2416"/>
+  <circle cx="102" cy="70" r="8" fill="#2C2416"/>
+  <circle cx="58" cy="114" r="8" fill="#2C2416"/>
+  <!-- Score tokens (stacked chips) -->
+  <circle cx="148" cy="72" r="22" fill="#C62828"/>
+  <circle cx="148" cy="100" r="22" fill="#2E7D32"/>
+  <circle cx="148" cy="128" r="22" fill="#1565C0"/>
+  <circle cx="148" cy="72" r="10" fill="#F5EFE6" opacity="0.35"/>
+  <circle cx="148" cy="100" r="10" fill="#F5EFE6" opacity="0.35"/>
+  <circle cx="148" cy="128" r="10" fill="#F5EFE6" opacity="0.35"/>
 </svg>
