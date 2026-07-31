@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <rect width="512" height="512" rx="96" fill="#8B4513"/>
+  <rect x="64" y="224" width="384" height="64" rx="8" fill="#F5EFE6"/>
+  <rect x="96" y="176" width="40" height="160" rx="4" fill="#D4A574"/>
+  <rect x="192" y="176" width="40" height="160" rx="4" fill="#D4A574"/>
+  <rect x="288" y="176" width="40" height="160" rx="4" fill="#D4A574"/>
+  <rect x="384" y="176" width="40" height="160" rx="4" fill="#D4A574"/>
+  <circle cx="144" cy="352" r="36" fill="#2C2416"/>
+  <circle cx="368" cy="352" r="36" fill="#2C2416"/>
+  <path d="M112 160h160l64 64H112V160z" fill="#C62828"/>
+  <text x="256" y="130" text-anchor="middle" fill="#F5EFE6" font-family="system-ui,sans-serif" font-size="56" font-weight="700">TTR</text>
+</svg>

@@ -1,0 +1,117 @@
+import { useEffect, useState } from 'react'
+
+interface StepperInputProps {
+  label: string
+  value: number
+  onChange: (value: number) => void
+  onAdjust: (delta: number) => void
+  hint?: string
+  min?: number
+  max?: number
+}
+
+export function StepperInput({
+  label,
+  value,
+  onChange,
+  onAdjust,
+  hint,
+  min = 0,
+  max,
+}: StepperInputProps) {
+  const [focused, setFocused] = useState(false)
+  const [draft, setDraft] = useState(String(value))
+
+  useEffect(() => {
+    if (!focused) setDraft(String(value))
+  }, [value, focused])
+
+  const clamp = (n: number) => {
+    let next = Math.max(min, Math.floor(n) || 0)
+    if (max != null) next = Math.min(max, next)
+    return next
+  }
+
+  const commit = (raw: string) => {
+    if (raw.trim() === '') {
+      onChange(min)
+      setDraft(String(min))
+      return
+    }
+    const n = parseInt(raw, 10)
+    if (Number.isNaN(n)) {
+      setDraft(String(value))
+      return
+    }
+    const next = clamp(n)
+    onChange(next)
+    setDraft(String(next))
+  }
+
+  const atMax = max != null && value >= max
+
+  return (
+    <div className="stepper-row">
+      <div className="stepper-label">
+        <span className="stepper-label-text">{label}</span>
+        {hint ? <span className="stepper-hint">{hint}</span> : null}
+      </div>
+      <div className="stepper-controls">
+        <button
+          type="button"
+          className="stepper-btn"
+          aria-label={`Decrease ${label}`}
+          onClick={() => onAdjust(-1)}
+          disabled={value <= min}
+        >
+          −
+        </button>
+        <input
+          type="text"
+          className="stepper-input"
+          inputMode="numeric"
+          pattern="[0-9]*"
+          autoComplete="off"
+          value={focused ? draft : String(value)}
+          onFocus={(e) => {
+            setFocused(true)
+            setDraft(String(value))
+            requestAnimationFrame(() => e.target.select())
+          }}
+          onBlur={() => {
+            commit(draft)
+            setFocused(false)
+          }}
+          onChange={(e) => {
+            const raw = e.target.value
+            if (raw === '') {
+              setDraft('')
+              return
+            }
+            if (!/^\d+$/.test(raw)) return
+            const normalized =
+              raw.replace(/^0+(?=\d)/, '') === ''
+                ? '0'
+                : raw.replace(/^0+(?=\d)/, '')
+            setDraft(normalized)
+            const n = parseInt(normalized, 10)
+            if (!Number.isNaN(n)) onChange(clamp(n))
+          }}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') e.currentTarget.blur()
+          }}
+          aria-label={label}
+        />
+        <button
+          type="button"
+          className="stepper-btn"
+          aria-label={`Increase ${label}`}
+          onClick={() => onAdjust(1)}
+          disabled={atMax}
+        >
+          +
+        </button>
+      </div>
+    </div>
+  )
+}
