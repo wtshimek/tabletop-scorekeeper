@@ -29,6 +29,29 @@ npm run build
 npm run preview
 ```
 
+## Live app
+
+- **Production:** https://tabletop-scorekeeper.vercel.app  
+- **Source:** https://github.com/wtshimek/tabletop-scorekeeper  
+
+Scores are stored in each browser’s `localStorage` (not synced across devices).
+
+### Deploy updates
+
+After connecting the GitHub repo in the [Vercel project settings](https://vercel.com/wesley-4f2a/tabletop-scorekeeper/settings/git) (Install the Vercel GitHub app if prompted):
+
+```bash
+git add -A
+git commit -m "Your change"
+git push origin main
+```
+
+Vercel rebuilds production automatically. Until Git is connected, deploy with:
+
+```bash
+npx.cmd vercel --prod
+```
+
 ## Stack
 
 React · React Router · Vite · TypeScript · Tailwind CSS · vite-plugin-pwa
